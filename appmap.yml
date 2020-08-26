@@ -1,0 +1,4 @@
+name: activeadmin
+
+packages:
+- path: lib

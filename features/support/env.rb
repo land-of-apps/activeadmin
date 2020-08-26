@@ -1,5 +1,8 @@
 ENV['RAILS_ENV'] = 'test'
 
+# APPMAP
+require 'appmap/cucumber'
+
 require 'simplecov' if ENV["COVERAGE"] == "true"
 
 Dir["#{File.expand_path('../step_definitions', __dir__)}/*.rb"].each do |f|

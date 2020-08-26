@@ -1,3 +1,5 @@
+require 'appmap/rspec'
+
 require 'simplecov' if ENV["COVERAGE"] == "true"
 
 RSpec.configure do |config|
