@@ -44,6 +44,7 @@ group :test do
   gem 'rspec-support', github: 'rspec/rspec-support', ref: '6553911974ee93855008f8ff41c26cea6652d74d'
   gem 'rspec-expectations', github: 'rspec/rspec-expectations', ref: 'eb1787f0e1a5ec2c2650048ee60a45d4c9738d78'
   gem "sqlite3", "~> 1.4", platform: :mri
+  gem 'appmap', git: 'https://github.com/applandinc/appmap-ruby'
 end
 
 group :release do
