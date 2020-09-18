@@ -12,6 +12,15 @@ end
 
 create_file 'app/assets/images/a/favicon.ico'
 
+create_file 'appmap.yml', <<~FILE
+  name: activeadmin
+  packages:
+FILE
+
+inject_into_file 'config/application.rb', after: "require 'rails/all'" do
+  "\nrequire 'appmap/railtie'"
+end
+
 require 'active_admin/dependency'
 
 timestamps = ActiveAdmin::Dependency.rails?('>= 6.1.0.a') ? '--timestamps' : 'created_at:datetime updated_at:datetime'

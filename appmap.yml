@@ -1,0 +1,20 @@
+name: activeadmin
+
+packages:
+- path: lib/active_admin/base_controller
+- path: lib/active_admin/batch_actions
+- path: lib/active_admin/filters
+  exclude:
+  - formtastic_addons.rb
+- path: lib/active_admin/generators
+- path: lib/active_admin/inputs
+- path: lib/active_admin/localizers
+- path: lib/active_admin/orm
+- path: lib/active_admin/resource
+- path: lib/active_admin/resource_controller
+- path: lib/active_admin/views_helpers
+- path: lib/active_admin/views
+- path: lib/active_admin
+  exclude:
+  - filters/formtastic_addons.rb
+  - dynamic_setting.rb

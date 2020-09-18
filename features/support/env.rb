@@ -2,6 +2,17 @@ ENV['RAILS_ENV'] = 'test'
 
 require 'simplecov' if ENV["COVERAGE"] == "true"
 
+require 'appmap/cucumber'
+if AppMap::Cucumber.enabled?
+  Around('not @appmap-disable') do |scenario, block|
+    appmap = AppMap.record do
+      block.call
+    end
+
+    AppMap::Cucumber.write_scenario(scenario, appmap)
+  end
+end
+
 Dir["#{File.expand_path('../step_definitions', __dir__)}/*.rb"].each do |f|
   require f
 end
